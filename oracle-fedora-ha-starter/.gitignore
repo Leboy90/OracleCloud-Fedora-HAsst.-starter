@@ -1,0 +1,17 @@
+.env
+.env.*
+*.log
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+*.pyo
+*.rpm
+*.deb
+*.tar
+*.gz
+*.zip
+config/
+homeassistant/
