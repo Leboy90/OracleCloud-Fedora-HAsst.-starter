@@ -1,0 +1,28 @@
+# Entorno / secretos
+.env
+.env.*
+
+# Temporales / logs
+*.log
+*.tmp
+*.swp
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Artefactos
+*.rpm
+*.deb
+*.tar
+*.gz
+*.zip
+
+# Datos locales de HA (si alguno)
+config/
+homeassistant/

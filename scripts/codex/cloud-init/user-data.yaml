@@ -1,0 +1,14 @@
+#cloud-config
+package_update: true
+runcmd:
+  - [ bash, -lc, "dnf -y install git" ]
+  - [ bash, -lc, "git clone https://github.com/Lebov90/oracle-fedora-ha-starter.git /root/oracle-starter" ]
+  - [ bash, -lc, "cd /root/oracle-starter && chmod +x scripts/*.sh" ]
+  - [ bash, -lc, "cd /root/oracle-starter && ./scripts/bootstrap-fedora-oci.sh" ]
+  - [ bash, -lc, "cd /root/oracle-starter && ./scripts/open-firewall.sh" ]
+  - [ bash, -lc, "cd /root/oracle-starter && ./scripts/install-vnc-kde.sh" ]
+  - [ bash, -lc, "cd /root/oracle-starter && ./scripts/install-homeassistant-docker.sh" ]
+  # - [ bash, -lc, "export TS_AUTHKEY='tskey-XXXXXXXXXXXXXXXX'; cd /root/oracle-starter && ./scripts/install-tailscale.sh" ]
+  # - [ bash, -lc, "cd /root/oracle-starter && ./scripts/install-plex.sh" ]
+  # - [ bash, -lc, "cd /root/oracle-starter && ./scripts/install-anydesk.sh" ]
+  # - [ bash, -lc, "cd /root/oracle-starter && ./scripts/install-rustdesk.sh" ]

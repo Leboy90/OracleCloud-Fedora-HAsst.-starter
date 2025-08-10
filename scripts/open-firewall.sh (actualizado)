@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "[*] Configurando puertos en firewalld..."
+
+# SSH
+sudo firewall-cmd --permanent --add-service=ssh
+
+# VNC
+sudo firewall-cmd --permanent --add-port=5901/tcp
+
+# Home Assistant
+sudo firewall-cmd --permanent --add-port=8123/tcp
+
+# Plex
+sudo firewall-cmd --permanent --add-port=32400/tcp
+
+# AnyDesk
+sudo firewall-cmd --permanent --add-port=6568/tcp
+sudo firewall-cmd --permanent --add-port=6568/udp
+
+# RustDesk
+sudo firewall-cmd --permanent --add-port=21111/tcp
+sudo firewall-cmd --permanent --add-port=21112/tcp
+
+# Recargar firewall
+sudo firewall-cmd --reload
+
+echo "[✓] Puertos abiertos."
